@@ -7,6 +7,8 @@ const client = require('./client')
 
 app.use(cors())
 
+app.get('/', (req, res, next) => { res.send({ message: true }) })
+
 app.get('/message/:id', (req, res) => {
   const { id } = req.params
   res.send(messages.responses.find(response => response.id === id))
